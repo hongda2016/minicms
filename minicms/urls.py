@@ -23,6 +23,7 @@ urlpatterns = [
 	url(r'^news/(?P<pk>\d+)/(?P<article_slug>[^/]+)$',views.article_detail,name='article'),
 	url(r'^admin/', admin.site.urls),
 	url(r'^ueditor',include('DjangoUeditor.urls')),
+	url(r'^accounts/',include('registration.backends.default.urls')),
 ]
 if settings.DEBUG:
 	from django.conf.urls.static import static

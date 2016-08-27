@@ -32,11 +32,13 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'django.contrib.admin',
+	'django.contrib.sites',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+	'registration',
     'news',
 	'DjangoUeditor',
 ]
@@ -134,3 +136,10 @@ STATICFILES_DIRS = (
 # upload folder
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+REGISTRATION_OPEN = True        # 此项设置为True,用户方能注册
+ACCOUNT_ACTIVATION_DAYS = 7
+REGISTRATION_AUTO_LOGIN = True  # 此项设置为True，用户可以自动登录
+LOGIN_REDIRECT_URL = '/'  # 用户登录后转向的页面
+LOGIN_URL = '/accounts/login/'  # 用户未成功登录时转向的页面
+
